@@ -1,45 +1,39 @@
 $("#calcular").click(function () {
-    let v1 = parseFloat($("#txtvalor1").val());
-    let v2 = parseFloat($("#txtvalor2").val());
-    let v3 = parseFloat($("#txtvalor3").val());
+    let nome = $("#nome").val();
+    let idade = parseFloat($("#idade").val());
+    let salario = parseFloat($("#salario").val());
+    let dependentes = parseFloat($("#dependentes").val());
 
-    let media = parseFloat(((v1 + v2 + v3) / 3).toFixed(2));
+    let adicionais = parseFloat(((idade + salario + dependentes) / 3).toFixed(2));
 
-    if (isNaN(v1) || isNaN(v2) || isNaN(v3)) {
-        alert('Favor inserir valores válidos para: Valor 1, Valor 2 e Valor 3 !!!')
+    if (isNaN(idade) || isNaN(salario) || isNaN(dependentes)) {
+        alert('Favor inserir valores válidos para: Idade, Salário e Depentestes!!!')
         return;
     }
 
-    let moeda = media.toLocaleString('pt-BR',
+    let calculo = adicionais.toLocaleString('pt-BR',
         {
             style: 'currency',
             currency: 'BRL',
             minimumFractionDigits: 2
         });
 
-    $('#txtmedia')
-        .text("A média é: " + moeda)
-        .css({ 'font-weight': 'bold', 'font-size': '18pt', 'color': '#00f' })
-        .fadeIn(1000);
+    if (idade > 1) {
+        alert("Nome do funcionário: " + nome+"\nNúmero de dependentes: " + dependentes+"\nSalário Bruto: " + salario +"\nINSS: " + salario+"\nVale Transporte: " + salario+"\nSalário Líquido: " + calculo)
 
-    if (media > 6) {
-        alert('Valor acima de 6: ' + media)
-        console.log('Valor acima de 6: ' + media)
-        $("#txtmsg")
-            .text("Valor acima de 6: " + media)
-            .css({ 'font-weight': 'bold', 'font-size': '18pt', 'color': '#00f' });
+            /*
+            
+            + salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + '\nINSS: ' + (salario * 0.11).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + '\nVale Transporte: ' + (salario * 0.06).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' };
+*/
     } else {
-        alert('Valor menor ou igual a 6: ' + media)
-        console.log('Valor menor ou igual a 6: ' + media)
-        $("#txtmsg")
-            .text("Valor menor ou igual a 6: " + media)
-            .css({ 'font-weight': 'bold', 'font-size': '18pt', 'color': '#00f' });
+        alert('Valor menor ou igual a 6: ' + adicionais)
+        
     }
-
+/*
     // if ternário: decisão em uma linha
-    var mostrar = "da média"
-    mostrar = (media > 6) ? "acima " + mostrar : "abaixo " + mostrar;
-    alert('Resultado do if ternário: ' + mostrar)
+    //var mostrar = "da média"
+    //mostrar = (media > 6) ? "acima " + mostrar : "abaixo " + mostrar;
+    //alert('Resultado do if ternário: ' + mostrar)
 
     //estrutura de decisão - switch case
     var msg = "A média é: ";
@@ -68,19 +62,20 @@ $("#calcular").click(function () {
             break;
     }
     alert(msg)
-   
+
 
     //fatorial
     var fatorial = 1;
-    
-    
+
+
     for (let i = 1; i <= v1; i++) {
         fatorial *= i;
     }
-    
+
     alert('O valor fatorial de v1 é: ' + fatorial)
 
     $("#txtfatorial")
         .text("Valor do fatorial é: " + fatorial)
         .css({ 'font-weight': 'bold', 'font-size': '18pt', 'color': '#00f' });
+        */	
 });
