@@ -23,7 +23,9 @@ $("#calcular").click(function () {
         bonus = 200;
     }
 
-    salario_liquido = salario - inss - vale + bonus;
+    adicional_depententes = dependentes * 50;
+
+    salario_liquido = salario - inss - vale + bonus + adicional_depententes;
 
     if (idade > 1) {
         alert("Nome do funcionário: " + nome + "\nNúmero de dependentes: " + dependentes + "\nSalário Bruto: " + salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nINSS: " + inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nVale Transporte: " + vale.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nSalário Líquido: " + salario_liquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
