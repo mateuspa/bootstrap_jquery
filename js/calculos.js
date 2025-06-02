@@ -4,10 +4,10 @@ $("#calcular").click(function () {
     let salario = parseFloat($("#salario").val());
     let dependentes = parseFloat($("#dependentes").val());
 
-    let adicionais = parseFloat(((idade + salario + dependentes) / 3).toFixed(2));
+    //let adicionais = parseFloat(((idade + salario + dependentes) / 3).toFixed(2));
 
     if (isNaN(idade) || isNaN(salario) || isNaN(dependentes)) {
-        alert('Incluir valores nos campos: Idade, Salário e Dependentes!!!')
+        alert('Preencher campos obrigatórios: Idade, Salário e Dependentes.')
         return;
     }
 
@@ -23,14 +23,16 @@ $("#calcular").click(function () {
         bonus = 200;
     }
 
-    adicional_depententes = dependentes * 50;
+    // calculando adicional de R$ 50 por dependente
+    adicionaldependentes = dependentes * 50;
 
-    salario_liquido = salario - inss - vale + bonus + adicional_depententes;
+    //calculado salário líquido
+    salarioliquido = salario - inss - vale + bonus + adicionaldependentes;
 
     if (idade > 1) {
-        alert("Nome do funcionário: " + nome + "\nNúmero de dependentes: " + dependentes + "\nSalário Bruto: " + salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nINSS: " + inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nVale Transporte: " + vale.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nSalário Líquido: " + salario_liquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        alert("Nome do funcionário: " + nome + "\nNúmero de dependentes: " + dependentes + "\nSalário Bruto: " + salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nINSS: " + inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nVale Transporte: " + vale.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + "\nSalário Líquido: " + salarioliquido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
     } else {
-        alert('Valor menor ou igual a 6: ' + adicionais)
+        alert('Baby detectado, não tem salário.')
 
     }
 });
