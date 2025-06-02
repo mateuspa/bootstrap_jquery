@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Mateus Prince">
   <meta name="keywords" content="HTML, CSS, bootstrap, javascript">
-  <meta name="description" content="Site com tecnologias HTML, CSS, bootstrap e javascript">
+  <meta name="description" content="Tecnologias HTML, CSS, bootstrap, javascript, jquery">
   <title>Cálcular Salário Líquido - Mateus Prince</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="shortcut icon" type="image/jpg" href="imagem/icone.png" />
+  <link rel="shortcut icon" type="imagem/jpg" href="imagem/icone.png" />
 </head>
 
 <!-- Conteúo WEB  -->
@@ -42,7 +42,7 @@
   </nav>
 
   <div class="container mt-4">
-    <h3>Cálculo Completo de Salário de Funcionários</h3>
+    <h3>Cálcular Salário de Funcionários</h3>
     <form class="mt-4">
       <div class="form-group">
         <label for="nome">Nome</label>
@@ -52,18 +52,17 @@
       <div class="form-group">
         <label for="idade">Idade</label>
         <input type="number" class="form-control" id="idade" placeholder="Idade" step="1">
-        <small id="idade" class="form-text text-muted">Bônus de R$ 200,00 para idade <= 50. Se idade> 50, bônus de R$
-            300,00.</small>
+        <small id="idade" class="form-text text-muted">Bônus de R$ 200,00 se funcinonário tiver até 50 anos. Caso maior de 50 anos, o bônus será de R$ 300,00.</small>
       </div>
       <div class="form-group">
-        <label for="salario">Salário</label>
+        <label for="salario">Salário Bruto</label>
         <input type="number" class="form-control" id="salario" placeholder="Salario Bruto" step=".5">
         <small id="salario" class="form-text text-muted">Salário Bruto do funcionário</small>
       </div>
       <div class="form-group">
         <label for="dependentes">Dependentes</label>
         <input type="number" class="form-control" id="dependentes" placeholder="Número de dependentes" step="1">
-        <small id="dependentes" class="form-text text-muted">R$ 50,00 adicicionais para cada dependente</small>
+        <small id="dependentes" class="form-text text-muted">R$ 50,00 adicionais para cada dependente</small>
       </div>
       <button id="calcular" class="btn btn-primary">Calcular Salário Líquido</button>
     </form>

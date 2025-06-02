@@ -7,7 +7,7 @@ $("#calcular").click(function () {
     let adicionais = parseFloat(((idade + salario + dependentes) / 3).toFixed(2));
 
     if (isNaN(idade) || isNaN(salario) || isNaN(dependentes)) {
-        alert('Favor inserir valores válidos para: Idade, Salário e Depentestes!!!')
+        alert('Incluir valores nos campos: Idade, Salário e Dependentes!!!')
         return;
     }
 
